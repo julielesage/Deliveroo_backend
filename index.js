@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 
-//pour autoriser un acces exterieur venant dun front par exemple
+//pour autoriser un acces exterieur venant d'un front par exemple
 const cors = require("cors");
 app.use(cors());
+
+require("dotenv").confit();
 
 //on post sur une adresse toute cette bdd.json avec heroku
 app.get("/", (req, res) => {
@@ -29,8 +31,8 @@ app.get("/", (req, res) => {
         post_code: "75010",
         route: "Passage Dubail",
         street_number: "25",
-        city: "Paris"
-      }
+        city: "Paris",
+      },
     },
     categories: [
       {
@@ -44,7 +46,7 @@ app.get("/", (req, res) => {
             price: "25.00",
             picture:
               "https://f.roocdn.com/images/menu_items/1583350/item-image.jpg",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-89",
@@ -53,9 +55,9 @@ app.get("/", (req, res) => {
               "Falafels bio, houmous bio, avocat aux super graines bio, lentilles au paprika, herbes fraîches, houmous de carotte et légumes de saison, soupe du jour bio, pain bio & confiture, crunola parfait aux fruits de saison, flûte aux raisins et noisettes, jus de fruits 33cl au choix",
             price: "25.00",
             picture:
-              "https://f.roocdn.com/images/menu_items/3905693/item-image.jpg"
-          }
-        ]
+              "https://f.roocdn.com/images/menu_items/3905693/item-image.jpg",
+          },
+        ],
       },
       {
         name: "Petit déjeuner",
@@ -65,13 +67,13 @@ app.get("/", (req, res) => {
             title: "Petit-déjeuner 1 personne",
             description:
               "Assortiment de pains bio, beurre & confitures bio + 1 viennoiserie bio au choix + 1 boisson fraîche au choix",
-            price: "10.40"
+            price: "10.40",
           },
           {
             id: "1519055545-91",
             title: "Fromage blanc bio au miel",
             description: "",
-            price: "10.40"
+            price: "10.40",
           },
           {
             id: "1519055545-92",
@@ -80,7 +82,7 @@ app.get("/", (req, res) => {
             price: "6.60",
             picture:
               "https://f.roocdn.com/images/menu_items/1323271/item-image.jpg",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-93",
@@ -89,7 +91,7 @@ app.get("/", (req, res) => {
             title: "Crunola parfait bio (100% végétalien)",
             description:
               "100% végétalien - granola cru, banane, lait de coco et beurre de noix de cajou",
-            price: "6.60"
+            price: "6.60",
           },
           {
             id: "1519055545-137",
@@ -99,7 +101,7 @@ app.get("/", (req, res) => {
             description: "Pomme, ananas, kiwi, orange, grenade, myrtilles",
             price: "6.90",
             picture:
-              "https://f.roocdn.com/images/menu_items/2549378/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/2549378/item-image.jpg",
           },
           {
             id: "1519055545-95",
@@ -108,7 +110,7 @@ app.get("/", (req, res) => {
             title: "Omelette au four de saison",
             description:
               "Courge butternut, chèvre & thym, avec une salade de jeunes pousses",
-            price: "6.60"
+            price: "6.60",
           },
           {
             id: "1519055545-96",
@@ -118,7 +120,7 @@ app.get("/", (req, res) => {
             description:
               "Graines de chia bio, myrtilles, grenades, crunola bio",
             price: "6.60",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-97",
@@ -129,9 +131,9 @@ app.get("/", (req, res) => {
               "Muesli maison bio, boisson à l’amande bio, fruits de saison et super graines bio (VEGAN)",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/5250391/item-image.jpg"
-          }
-        ]
+              "https://f.roocdn.com/images/menu_items/5250391/item-image.jpg",
+          },
+        ],
       },
       {
         name: "Viennoiseries et pains",
@@ -144,7 +146,7 @@ app.get("/", (req, res) => {
             description: "",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/1323282/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/1323282/item-image.jpg",
           },
           {
             id: "1519055545-99",
@@ -155,7 +157,7 @@ app.get("/", (req, res) => {
             price: "6.60",
             picture:
               "https://f.roocdn.com/images/menu_items/1323287/item-image.jpg",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-100",
@@ -165,7 +167,7 @@ app.get("/", (req, res) => {
             description: "",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/3637782/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/3637782/item-image.jpg",
           },
           {
             id: "1519055545-101",
@@ -175,7 +177,7 @@ app.get("/", (req, res) => {
             description: "300g",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/1583350/item-image.jpg",
           },
           {
             id: "1519055545-102",
@@ -183,7 +185,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Grande brioche",
             description: "",
-            price: "6.60"
+            price: "6.60",
           },
           {
             id: "1519055545-103",
@@ -194,7 +196,7 @@ app.get("/", (req, res) => {
             price: "6.60",
             picture:
               "https://f.roocdn.com/images/menu_items/2020235/item-image.jpg",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-104",
@@ -202,7 +204,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Muffin bio pomme cannelle",
             description: "",
-            price: "6.60"
+            price: "6.60",
           },
           {
             id: "1519055545-105",
@@ -210,7 +212,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Muffin banane chocolat bio",
             description: "",
-            price: "6.60"
+            price: "6.60",
           },
           {
             id: "1519055545-106",
@@ -220,7 +222,7 @@ app.get("/", (req, res) => {
             description: "350g",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/1323275/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/1323275/item-image.jpg",
           },
           {
             id: "1519055545-107",
@@ -228,7 +230,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Pain multi-céréales raisins bio",
             description: "700g",
-            price: "6.60"
+            price: "6.60",
           },
           {
             id: "1519055545-108",
@@ -238,7 +240,7 @@ app.get("/", (req, res) => {
             description: "",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/2549462/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/2549462/item-image.jpg",
           },
           {
             id: "1519055545-109",
@@ -246,9 +248,9 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Baguette Graines de Potiron & Tournesol",
             description: "300g",
-            price: "6.60"
-          }
-        ]
+            price: "6.60",
+          },
+        ],
       },
       {
         name: "Salades",
@@ -263,7 +265,7 @@ app.get("/", (req, res) => {
             price: "6.60",
             picture:
               "https://f.roocdn.com/images/menu_items/2018213/item-image.jpg",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-111",
@@ -274,7 +276,7 @@ app.get("/", (req, res) => {
               "Saumon fumé, avocat, super graines bio, lentilles au parika, chou rouge, concombre, jeunes pousses",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/1323292/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/1323292/item-image.jpg",
           },
           {
             id: "1519055545-112",
@@ -285,7 +287,7 @@ app.get("/", (req, res) => {
               "Sarrasin bio, quinoa bio, houmous de carottes, lentilles au paprika, courge butternut, grenade, avocat, caviar d'algues, chips de légumes bio",
             price: "6.60",
             picture:
-              "https://f.roocdn.com/images/menu_items/2549941/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/2549941/item-image.jpg",
           },
           {
             id: "1519055545-113",
@@ -297,7 +299,7 @@ app.get("/", (req, res) => {
             price: "6.60",
             picture:
               "https://f.roocdn.com/images/menu_items/5250423/item-image.jpg",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-114",
@@ -305,7 +307,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Bol lentilles ou quinoa (100% végétalien)",
             description: "",
-            price: "3.90"
+            price: "3.90",
           },
           {
             id: "1519055545-125",
@@ -313,7 +315,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Quiche Lorraine",
             description: "Servie avec une salade de jeunes pousses bio",
-            price: "6.90"
+            price: "6.90",
           },
           {
             id: "1519055545-116",
@@ -321,9 +323,9 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Mini salade lentilles (100% végétarien)",
             description: "Lentilles au paprika, carottes bio et oeuf poché bio",
-            price: "3.90"
-          }
-        ]
+            price: "3.90",
+          },
+        ],
       },
       {
         name: "Tartines froides",
@@ -336,7 +338,7 @@ app.get("/", (req, res) => {
             description: "Purée d'avocat bio et gomasio bio",
             price: "6.90",
             picture:
-              "https://f.roocdn.com/images/menu_items/1323299/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/1323299/item-image.jpg",
           },
           {
             id: "1519055545-118",
@@ -344,7 +346,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Tartine poulet fumé & avocat",
             description: "Concombre bio et cébettes",
-            price: "6.90"
+            price: "6.90",
           },
           {
             id: "1519055545-119",
@@ -353,7 +355,7 @@ app.get("/", (req, res) => {
             title: "Jambon fumé & mozzarella di bufala bio tomates séchées",
             description: "Mozzarella di bufala bio",
             price: "6.90",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-120",
@@ -363,7 +365,7 @@ app.get("/", (req, res) => {
             description: "",
             price: "6.90",
             picture:
-              "https://f.roocdn.com/images/menu_items/4607227/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/4607227/item-image.jpg",
           },
           {
             id: "1519055545-121",
@@ -374,9 +376,9 @@ app.get("/", (req, res) => {
               "Super graines bio, grenade, concombre et roquette (Végétarien)",
             price: "6.90",
             picture:
-              "https://f.roocdn.com/images/menu_items/5250426/item-image.jpg"
-          }
-        ]
+              "https://f.roocdn.com/images/menu_items/5250426/item-image.jpg",
+          },
+        ],
       },
       {
         name: "Soupe & plats chauds",
@@ -388,7 +390,7 @@ app.get("/", (req, res) => {
             title: "Le déjeuner du boulanger",
             description:
               "Demi-tartine du jour & soupe du jour aux légumes bio, servi avec du pain bio et une salade de jeunes pousses bio",
-            price: "6.90"
+            price: "6.90",
           },
           {
             id: "1519055545-123",
@@ -396,7 +398,7 @@ app.get("/", (req, res) => {
               "https://deliveroo.fr/fr/menu/paris/3eme-temple/le-pain-quotidien-bretagne",
             title: "Soupe du jour aux légumes bio (100% végétalien)",
             description: "",
-            price: "6.90"
+            price: "6.90",
           },
           {
             id: "1519055545-126",
@@ -406,7 +408,7 @@ app.get("/", (req, res) => {
             description: "",
             price: "6.90",
             picture:
-              "https://f.roocdn.com/images/menu_items/1493250/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/1493250/item-image.jpg",
           },
           {
             id: "1519055545-124",
@@ -416,7 +418,7 @@ app.get("/", (req, res) => {
               "Pot-au-feu de légumes bio, quinoa bio & harissa bio (100% végétalien)",
             description: "",
             price: "6.90",
-            popular: true
+            popular: true,
           },
           {
             id: "1519055545-127",
@@ -427,7 +429,7 @@ app.get("/", (req, res) => {
               "3 haricots, purée avocat, spécialité au soja bio & cebettes",
             price: "6.90",
             picture:
-              "https://f.roocdn.com/images/menu_items/4607228/item-image.jpg"
+              "https://f.roocdn.com/images/menu_items/4607228/item-image.jpg",
           },
           {
             id: "1519055545-128",
@@ -439,20 +441,20 @@ app.get("/", (req, res) => {
             price: "6.90",
             picture:
               "https://f.roocdn.com/images/menu_items/5250429/item-image.jpg",
-            popular: true
-          }
-        ]
+            popular: true,
+          },
+        ],
       },
       { name: "Sandwichs baguette", meals: [] },
       { name: "Desserts", meals: [] },
       { name: "Boissons fraîches", meals: [] },
       { name: "Epicerie bio", meals: [] },
       { name: "Repas corporate", meals: [] },
-      { name: "Couverts", meals: [] }
-    ]
+      { name: "Couverts", meals: [] },
+    ],
   });
 });
 
-app.listen(process.env.PORT || 3200, () => {
+app.listen(process.env.PORT, () => {
   console.log("server started");
 });
