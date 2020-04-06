@@ -5,7 +5,7 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
-require("dotenv").confit();
+require("dotenv").config();
 
 //on post sur une adresse toute cette bdd.json avec heroku
 app.get("/", (req, res) => {
@@ -455,6 +455,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(4000, () => {
   console.log("server started");
 });
